@@ -1,14 +1,25 @@
-import { DECREMENT, INCREMENT } from "../actions/action.constants";
+import { DECREMENT, INCREMENT,INCREMENTBY5,DECREMENTBY5,RESET,TYPECOUNT } from "../actions/action.constants";
 
 const initialState = 0;
 
 const counterReducer = (state = initialState, action) => {
-  if (action.type === INCREMENT) {
-    return state + 1;
-  } else if (action.type === DECREMENT) {
-    return state - 1;
+  const {type, payload} = action
+  switch (type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    case INCREMENTBY5:
+      return state + 5;
+    case DECREMENTBY5:
+      return state - 5;
+    case RESET:
+      return (state = 0);
+    case TYPECOUNT: 
+      return state + parseInt(payload)
+    default:
+      return state;
   }
-  return state;
 };
 
 export default counterReducer;
