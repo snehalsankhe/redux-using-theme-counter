@@ -11,9 +11,7 @@ const Counter = (props) => {
   );
 };
 
-//connect -- HOC higer order component
-// function -- input component --  another component
-// connect -- input Counter --- output Counter connected to store and redux
+
 const mapStateToProps = (state) => {
   return {
     count: state.count,
