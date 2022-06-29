@@ -3,7 +3,7 @@ import { DARK_THEME, DEFAULT_THEME } from "../redux/actions/action.constants";
 const Theme = (props) => {
   return (
     <div>
-      <h3>Theme :{props.theme}</h3>
+      <h3>Theme : {props.theme}</h3>
       <button onClick={props.darkTheme}>Dark theme</button>
       <button onClick={props.defaultTheme}>Default theme </button>
     </div>
