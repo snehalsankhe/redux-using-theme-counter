@@ -19,7 +19,7 @@ const Counter = (props) => {
         <h2>
           Please add input number <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
         </h2>
-        <button onClick={(e) => dispatch({type: TYPECOUNT, payload: value,setValue })}>Add</button>    
+        <button onClick={(e) => dispatch({type: TYPECOUNT, payload: value,setValue})}>Add</button>    
       </div>
     </>
   );

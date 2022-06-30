@@ -3,7 +3,7 @@ import { DECREMENT, INCREMENT,INCREMENTBY5,DECREMENTBY5,RESET,TYPECOUNT } from "
 const initialState = 0;
 
 const counterReducer = (state = initialState, action) => {
-  const {type, payload} = action
+  const {type, payload, setValue} = action
   switch (type) {
     case INCREMENT:
       return state + 1;
@@ -16,6 +16,7 @@ const counterReducer = (state = initialState, action) => {
     case RESET:
       return (state = 0);
     case TYPECOUNT: 
+      setValue("")
       return state + parseInt(payload)
     default:
       return state;
