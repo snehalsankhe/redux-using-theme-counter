@@ -3,7 +3,7 @@ import { useSelector, useDispatch, connect } from "react-redux";
 import { DECREMENT, INCREMENT, INCREMENTBY5, DECREMENTBY5, RESET, TYPECOUNT } from "../redux/actions/action.constants";
 const Counter = (props) => {
   // console.log("Counter value", props);
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState('')
   const count = useSelector((state) => state.count)
   const dispatch = useDispatch()
 
@@ -19,7 +19,7 @@ const Counter = (props) => {
         <h2>
           Please add input number <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
         </h2>
-        <button onClick={(e) => dispatch({type: TYPECOUNT, payload: value})}>Add</button>    
+        <button onClick={(e) => dispatch({type: TYPECOUNT, payload: value,setValue })}>Add</button>    
       </div>
     </>
   );
